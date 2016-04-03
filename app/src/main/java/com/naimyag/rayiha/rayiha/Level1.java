@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Level1 extends AppCompatActivity {
-
+//naim ebene atlayayım
     private Bundle extras=null;
     Adapter adp;
     GridView gv;
