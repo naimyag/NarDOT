@@ -97,31 +97,57 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
-        extras=getIntent().getExtras();
-        a=extras.getInt("level");
+        Intent intent=getIntent();
+
+        a=intent.getIntExtra("bolum",0);
 
         switch (a){
             case 1:
-                imgs[0] = R.drawable.iki; imgs[1] = R.drawable.uc; imgs[2] = R.drawable.iki; imgs[3] = R.drawable.iki;
-                imgs[4] = R.drawable.uc;  imgs[5] = R.drawable.uc; imgs[6] = R.drawable.uc;imgs[7] = R.drawable.iki;
-                imgs[8] = R.drawable.iki; imgs[9] = R.drawable.uc; imgs[10] = R.drawable.iki; imgs[11] = R.drawable.iki;
-                imgs[12] = R.drawable.iki;imgs[13] = R.drawable.iki;imgs[14] = R.drawable.iki;imgs[15] = R.drawable.iki;
+                imgs[1] = R.drawable.uc;
+                imgs[4] = R.drawable.uc;
+                imgs[5] = R.drawable.uc;
+                imgs[6] = R.drawable.uc;
+                imgs[9] = R.drawable.uc;
 
                 gv.setAdapter(adp);
                 break;
             case 2:
-                imgs[0] = R.drawable.iki; imgs[1] = R.drawable.uc; imgs[2] = R.drawable.iki; imgs[3] = R.drawable.uc;
-                imgs[4] = R.drawable.uc;  imgs[5] = R.drawable.uc; imgs[6] = R.drawable.dort;imgs[7] = R.drawable.uc;
-                imgs[8] = R.drawable.iki; imgs[9] = R.drawable.uc; imgs[10] = R.drawable.iki; imgs[11] = R.drawable.uc;
-                imgs[12] = R.drawable.iki;imgs[13] = R.drawable.iki;imgs[14] = R.drawable.iki;imgs[15] = R.drawable.iki;
+                imgs[1] = R.drawable.uc;
+                imgs[3] = R.drawable.uc;
+                imgs[4] = R.drawable.uc;
+                imgs[5] = R.drawable.uc;
+                imgs[6] = R.drawable.dort;
+                imgs[7] = R.drawable.uc;
+                imgs[9] = R.drawable.uc;
+                imgs[11] = R.drawable.uc;
 
                 gv.setAdapter(adp);
                 break;
             case 3:
-                imgs[0] = R.drawable.iki; imgs[1] = R.drawable.uc; imgs[2] = R.drawable.iki; imgs[3] = R.drawable.uc;
-                imgs[4] = R.drawable.uc;  imgs[5] = R.drawable.uc; imgs[6] = R.drawable.dort;imgs[7] = R.drawable.dort;
-                imgs[8] = R.drawable.iki; imgs[9] = R.drawable.uc; imgs[10] = R.drawable.uc; imgs[11] = R.drawable.dort;
-                imgs[12] = R.drawable.iki;imgs[13] = R.drawable.iki;imgs[14] = R.drawable.iki;imgs[15] = R.drawable.uc;
+                imgs[1] = R.drawable.uc;
+                imgs[3] = R.drawable.uc;
+                imgs[4] = R.drawable.uc;
+                imgs[5] = R.drawable.uc;
+                imgs[6] = R.drawable.dort;
+                imgs[7] = R.drawable.dort;
+                imgs[9] = R.drawable.uc;
+                imgs[10] = R.drawable.uc;
+                imgs[11] = R.drawable.dort;
+                imgs[15] = R.drawable.uc;
+
+                gv.setAdapter(adp);
+                break;
+            case 4:
+                imgs[1] = R.drawable.uc;
+                imgs[3] = R.drawable.uc;
+                imgs[4] = R.drawable.uc;
+                imgs[5] = R.drawable.uc;
+                imgs[6] = R.drawable.dort;
+                imgs[7] = R.drawable.dort;
+                imgs[9] = R.drawable.uc;
+                imgs[10] = R.drawable.uc;
+                imgs[11] = R.drawable.dort;
+                imgs[15] = R.drawable.uc;
 
                 gv.setAdapter(adp);
                 break;

@@ -6,40 +6,12 @@
     android:background="@drawable/zemin"
     tools:context="com.naimyag.rayiha.rayiha.MainActivity">
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_below="@+id/frameLayout"
-    android:layout_centerHorizontal="true">
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Level 1"
-            android:id="@+id/btn_lvl_1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Level 2"
-            android:id="@+id/btn_lvl_2"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Level 3"
-            android:id="@+id/btn_lvl_3"/>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+    <GridView
+        android:id="@+id/pnlGrid"
+        android:numColumns="3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </GridView>
 
 
 </RelativeLayout>
