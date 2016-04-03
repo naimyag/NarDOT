@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Rayiha.iml" filepath="$PROJECT_DIR$/Rayiha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NarDOT.iml" filepath="$PROJECT_DIR$/NarDOT.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
