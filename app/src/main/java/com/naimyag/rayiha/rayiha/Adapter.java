@@ -37,16 +37,21 @@ public class Adapter extends BaseAdapter {
     @Override
     public View getView(int pos, View convertView, ViewGroup parent) {
         ImageView imageV=new ImageView(context);
-        int newpos=pos+1;
-        int koory=newpos%4;
-        if(koory==0){koory=4;}
 
-        int koorx=((newpos-koory)/4)+1;
+        int length=getCount();
+
+        int kenar= (int) Math.sqrt((double) length);
+
+        int newpos=pos+1;
+        int koory=newpos%kenar;
+        if(koory==0){koory=kenar;}
+
+        int koorx=((newpos-koory)/kenar)+1;
 
         imageV.setTag(koorx+"-"+koory);
         imageV.setImageResource(images[pos]);
         imageV.setScaleType(ImageView.ScaleType.CENTER);
-        imageV.setLayoutParams(new GridView.LayoutParams(150, 150));
+        imageV.setLayoutParams(new GridView.LayoutParams(120, 120));
 
 
         return imageV;
