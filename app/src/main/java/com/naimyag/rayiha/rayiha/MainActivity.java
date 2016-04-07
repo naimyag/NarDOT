@@ -4,12 +4,23 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
 public class MainActivity extends AppCompatActivity {
-    
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //android.os.Process.killProcess(android.os.Process.myPid());
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        return true;
+    }
+
     private GridView pnlGrid;
     private Bolumler bolumler;
     private BolumAdapter controller;

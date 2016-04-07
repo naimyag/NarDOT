@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -18,6 +19,13 @@ import java.util.Random;
 
 public class Level1 extends AppCompatActivity {
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Intent intent = new Intent(Level1.this, MainActivity.class);
+        Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.saga, R.anim.soldan).toBundle();
+        startActivity(intent, bundle);
+        return true;
+    }
 
     private Bundle extras=null;
     Adapter adp;
@@ -178,62 +186,8 @@ public class Level1 extends AppCompatActivity {
 
         RandomBolumOlustur(a);
 
-      //  switch (a){
-      //      case 1:
-      //          RandomBolumOlustur(1);
-      //          //imgs[1] = R.drawable.uc;
-      //          //imgs[4] = R.drawable.uc;
-      //          //imgs[5] = R.drawable.uc;
-      //          //imgs[6] = R.drawable.uc;
-      //          //imgs[9] = R.drawable.uc;
-//
-      //          //gv.setAdapter(adp);
-      //          break;
-      //      case 2:
-      //          RandomBolumOlustur(2);
-      //          //imgs[1] = R.drawable.uc;
-      //          //imgs[3] = R.drawable.uc;
-      //          //imgs[4] = R.drawable.uc;
-      //          //imgs[5] = R.drawable.uc;
-      //          //imgs[6] = R.drawable.dort;
-      //          //imgs[7] = R.drawable.uc;
-      //          //imgs[9] = R.drawable.uc;
-      //          //imgs[11] = R.drawable.uc;
-//
-      //          gv.setAdapter(adp);
-      //          break;
-      //      case 3:
-      //          RandomBolumOlustur(4);
-      //          //imgs[1] = R.drawable.uc;
-      //          //imgs[3] = R.drawable.uc;
-      //          //imgs[4] = R.drawable.uc;
-      //          //imgs[5] = R.drawable.uc;
-      //          //imgs[6] = R.drawable.dort;
-      //          //imgs[7] = R.drawable.dort;
-      //          //imgs[9] = R.drawable.uc;
-      //          //imgs[10] = R.drawable.uc;
-      //          //imgs[11] = R.drawable.dort;
-      //          //imgs[15] = R.drawable.uc;
-//
-      //          gv.setAdapter(adp);
-      //          break;
-      //      case 4:
-      //          RandomBolumOlustur(5);
-      //          //imgs[1] = R.drawable.uc;
-      //          //imgs[3] = R.drawable.uc;
-      //          //imgs[4] = R.drawable.uc;
-      //          //imgs[5] = R.drawable.uc;
-      //          //imgs[6] = R.drawable.dort;
-      //          //imgs[7] = R.drawable.dort;
-      //          //imgs[9] = R.drawable.uc;
-      //          //imgs[10] = R.drawable.uc;
-      //          //imgs[11] = R.drawable.dort;
-      //          //imgs[15] = R.drawable.uc;
-//
+
                 gv.setAdapter(adp);
-      //          break;
-//
-      //  }
 
 
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -279,7 +233,6 @@ public class Level1 extends AppCompatActivity {
                 for (int i =0;i<imgs.length;i++){
                     if(imgs[i]!=R.drawable.iki){holder=false;}
                 }
-
 
 
                 if (holder) {

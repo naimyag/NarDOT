@@ -29,27 +29,18 @@ public class Bolumler {
         bolumler.add(new Bolum(10));
         bolumler.add(new Bolum(11));
         bolumler.add(new Bolum(12));
-        //bolumler.add(new Bolum(13,0));
-        //bolumler.add(new Bolum(14,0));
-        //bolumler.add(new Bolum(15,0));
-        //bolumler.add(new Bolum(16,0));
-        //bolumler.add(new Bolum(17,0));
-        //bolumler.add(new Bolum(18,0));
-        //bolumler.add(new Bolum(19,0));
-        //bolumler.add(new Bolum(20,0));
-        //bolumler.add(new Bolum(21,0));
-        //bolumler.add(new Bolum(22,0));
-        //bolumler.add(new Bolum(23,0));
-        //bolumler.add(new Bolum(24,0));
-        //bolumler.add(new Bolum(25,0));
-        //bolumler.add(new Bolum(26,0));
-        //bolumler.add(new Bolum(27,0));
-        //bolumler.add(new Bolum(28,0));
-        //bolumler.add(new Bolum(29,0));
-        //bolumler.add(new Bolum(30,0));
-        //bolumler.add(new Bolum(31,0));
-        //bolumler.add(new Bolum(32,0));
-        //bolumler.add(new Bolum(33,0));
+        bolumler.add(new Bolum(13));
+        bolumler.add(new Bolum(14));
+        bolumler.add(new Bolum(15));
+        bolumler.add(new Bolum(16));
+        bolumler.add(new Bolum(17));
+        bolumler.add(new Bolum(18));
+        bolumler.add(new Bolum(19));
+        bolumler.add(new Bolum(20));
+        bolumler.add(new Bolum(21));
+        bolumler.add(new Bolum(22));
+        bolumler.add(new Bolum(23));
+        bolumler.add(new Bolum(24));
     }
 }
 
