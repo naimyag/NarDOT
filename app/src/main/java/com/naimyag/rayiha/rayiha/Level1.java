@@ -19,6 +19,9 @@ import java.util.Random;
 
 public class Level1 extends AppCompatActivity {
 
+
+
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Intent intent = new Intent(Level1.this, MainActivity.class);
@@ -27,15 +30,21 @@ public class Level1 extends AppCompatActivity {
         return true;
     }
 
-    private Bundle extras=null;
+
+
+
+
     Adapter adp;
     GridView gv;
+
+
     //img sayısı
     int length=25;
     int[] imgs;
 
 
-    private TextView textView;
+
+    TextView textView;
     Button btn;
 
     int l=0;
@@ -157,17 +166,22 @@ public class Level1 extends AppCompatActivity {
         gv.setAdapter(adp);
 
 
-
-
     }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_level1);
+        Intent intent=getIntent();
+        a=intent.getIntExtra("bolum",1);
+        setTitle(a + ".Bölüm");
+
 
         init();
+        textView.setText("Kalan hamle sayısı: "+a);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,9 +194,9 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
-        Intent intent=getIntent();
 
-        a=intent.getIntExtra("bolum",1);
+
+
 
         RandomBolumOlustur(a);
 
@@ -194,8 +208,9 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int pos, long id) {
 
+                int hmlsys=a-i;
 
-                textView.setText("Tıklama sayısı: " + i);
+                textView.setText("Kalan hamle sayısı: " + hmlsys);
                 i++;
 
 
@@ -236,7 +251,19 @@ public class Level1 extends AppCompatActivity {
 
 
                 if (holder) {
-                    Toast.makeText(Level1.this, "BÖLÜM GEÇİLDİ!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Level1.this,a + ". BÖLÜM GEÇİLDİ!", Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(Level1.this, Level1.class);
+                    intent.putExtra("bolum", a+1);
+
+                    Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.animation, R.anim.animation2).toBundle();
+                    startActivity(intent, bundle);
+
+                }
+
+                else if (hmlsys==0){
+
+                    Toast.makeText(Level1.this,a + ". BÖLÜM GEÇİLEMEDİ!", Toast.LENGTH_LONG).show();
 
                     Intent intent = new Intent(Level1.this, MainActivity.class);
 
