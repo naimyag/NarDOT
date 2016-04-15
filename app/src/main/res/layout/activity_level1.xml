@@ -8,9 +8,11 @@
 
 
     <FrameLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:id="@+id/frameLayout">
 
         <GridView
@@ -44,9 +46,10 @@
 
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Geri Dön!"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/geri_butonu"
+            android:layout_gravity="center"
             android:id="@+id/button"/>
 
     </LinearLayout>

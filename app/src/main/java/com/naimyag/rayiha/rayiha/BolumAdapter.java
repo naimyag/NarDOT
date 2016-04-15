@@ -48,15 +48,16 @@ public class BolumAdapter extends BaseAdapter {
 
         LinearLayout pnlItem = (LinearLayout)  li.inflate(R.layout.gridbolumitem, null);
 
-
+        if(blm.getGecildi()) {
+            pnlItem.setBackgroundResource(R.drawable.button_aktif);
+            pnlItem.getChildAt(2).setBackgroundResource(R.drawable.tick_aktif);
+        }
 
 
         DisplayMetrics displaymetrics = new DisplayMetrics();
         ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         int screenWidth = (displaymetrics.widthPixels/3)-20;
         // int screenHeight = displaymetrics.heightPixels;
-
-
 
 
         TextView txtBolumNo =  (TextView) pnlItem.findViewById(R.id.bolum);

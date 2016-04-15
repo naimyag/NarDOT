@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true">
 
     <ImageView
         android:layout_gravity="center"
-        android:src="@drawable/splash"
+        android:background="@drawable/zemin"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <AbsoluteLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
-</FrameLayout>
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="14dp"
+            android:layout_y="7dp" />
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/amblem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="23dp"
+            android:layout_y="54dp" />
+    </AbsoluteLayout>
+
+
+
+</RelativeLayout>
