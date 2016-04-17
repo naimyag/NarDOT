@@ -1,13 +1,20 @@
 package com.naimyag.rayiha.rayiha;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Created by Ali on 22.8.2015.
  */
 public class Bolumler {
 
-
+    private Context context;
 
     private ArrayList<Bolum> bolumler;
 
@@ -15,32 +22,53 @@ public class Bolumler {
         return bolumler;
     }
 
-    public Bolumler(){
+    public int BolumBilgisiGetir(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPreferences.getInt("songecilenbolum", 0);
+    }
+
+    public void RandomBolumlerOlustur(){
+
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        if( sharedPreferences.getString("1.bolum", String.valueOf(0)) !=String.valueOf(0)){
+            Log.e("csd","asdasdasdasdasdasdasd");
+        }
+        else{
+
+            for(int i=1;i<12;i++){
+               // List<Integer> y=new ArrayList<Integer>();
+
+                Integer[] y = new Integer[i];
+
+                for(int j=0;j<i;j++){
+                    Random rand = new Random();
+                    y[j]=rand.nextInt(25);
+                }
+
+                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(i+".bolum", Arrays.toString(y));
+                editor.commit();
+            }
+        }
+
+    }
+
+
+
+    public Bolumler(Context context){
+
+
+        this.context=context;
+        RandomBolumlerOlustur();
+        int songecilenbolum=BolumBilgisiGetir();
+
         bolumler = new ArrayList<Bolum>();
-        bolumler.add(new Bolum(1));
-        bolumler.add(new Bolum(2));
-        bolumler.add(new Bolum(3));
-        bolumler.add(new Bolum(4));
-        bolumler.add(new Bolum(5));
-        bolumler.add(new Bolum(6));
-        bolumler.add(new Bolum(7));
-        bolumler.add(new Bolum(8));
-        bolumler.add(new Bolum(9));
-        bolumler.add(new Bolum(10));
-        bolumler.add(new Bolum(11));
-        bolumler.add(new Bolum(12));
-        bolumler.add(new Bolum(13));
-        bolumler.add(new Bolum(14));
-        bolumler.add(new Bolum(15));
-        bolumler.add(new Bolum(16));
-        bolumler.add(new Bolum(17));
-        bolumler.add(new Bolum(18));
-        bolumler.add(new Bolum(19));
-        bolumler.add(new Bolum(20));
-        bolumler.add(new Bolum(21));
-        bolumler.add(new Bolum(22));
-        bolumler.add(new Bolum(23));
-        bolumler.add(new Bolum(24));
+
+        for(int i=1;i<13;i++){
+            bolumler.add(new Bolum(i,songecilenbolum+2>i,songecilenbolum+2>i));
+        }
     }
 }
 

@@ -10,11 +10,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 public class MainActivity extends AppCompatActivity {
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //android.os.Process.killProcess(android.os.Process.myPid());
-
-        Intent intent = new Intent(Intent.ACTION_MAIN);
+        Intent intent =new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
@@ -26,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private BolumAdapter controller;
 
     private void init(){
+        this.getSharedPreferences("YOUR_PREFS", 0).edit().clear().commit();
         pnlGrid=(GridView) findViewById(R.id.pnlGrid);
-        bolumler = new Bolumler();
+        bolumler = new Bolumler(this);
         controller = new BolumAdapter(MainActivity.this,bolumler);
         pnlGrid.setAdapter(controller);
     }
@@ -37,10 +37,13 @@ public class MainActivity extends AppCompatActivity {
         pnlGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, Level1.class);
-                Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.animation, R.anim.animation2).toBundle();
-                intent.putExtra("bolum", position+1);
-                startActivity(intent,bundle);
+
+                if(bolumler.getBolumler().get(position).getGecildi()){
+                    Intent intent = new Intent(MainActivity.this, Level1.class);
+                    Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.animation, R.anim.animation2).toBundle();
+                    intent.putExtra("bolum", position+1);
+                    startActivity(intent,bundle);
+                }
             }
         });
     }

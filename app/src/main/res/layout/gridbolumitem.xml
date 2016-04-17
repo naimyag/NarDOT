@@ -2,20 +2,20 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="120dp"
-    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
     android:id="@+id/pnlItem"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/bolum"
+    android:background="@drawable/button_pasif"
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp">
 
     <TextView
         android:id="@+id/bolum"
-        android:text="1."
+        android:text="1"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="23sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,13 +24,20 @@
 
     <TextView
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:textColor="@android:color/holo_orange_dark"
         android:id="@+id/txtBolum"
         android:text="Bölüm"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="31dp"
         android:gravity="center"
         />
+
+        <ImageView
+            android:id="@+id/yildiz1"
+            android:background="@drawable/tick_pasif"
+            android:layout_width="30dp"
+            android:layout_height="28dp" />
 
 
 

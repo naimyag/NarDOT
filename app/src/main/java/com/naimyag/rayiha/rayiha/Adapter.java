@@ -14,6 +14,8 @@ public class Adapter extends BaseAdapter {
     Context context;
     int[] images;
 
+
+
     public Adapter(Context c, int[] img) {
         this.images=img;
         this.context=c;
